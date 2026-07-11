@@ -45,3 +45,23 @@ function test(param:One){
 test({name:"Bobby",age:12})
 
 //=============================================================================//
+// class and constructor
+class Person{
+    constructor(public name:string,public age:number){}
+}
+let p1=new Person("Bobby",22)
+let p2=new Person("Ram",21)
+
+//=============================================================================//
+
+//this keyword
+
+class Info {
+   name="harsh";
+   changeinfo(){
+    this.name="bobby" //to acess the class variable inside the method we should use this keyword//
+   }
+
+}
+
+//================================================================================//
