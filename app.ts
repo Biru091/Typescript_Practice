@@ -83,3 +83,45 @@ class EvCar extends Car{
 let ev1=new EvCar(100,"Tesla",100000,"Electric")
 
 //=================================================================================//
+// Readonly property
+
+class Info1{
+    constructor(public readonly name:string){}
+
+    changename(){
+        this.name="bobby" //this will give error because name is readonly property//
+    }
+
+}
+let info1=new Info1("Biru")
+info1.changename() // This will cause a compile-time error
+
+//=================================================================================//
+//Getters and Setters
+class Info2{
+    constructor(public _name:string,public age:Number){}
+    get name(){
+        return this._name;  //Getter is always return type and it is used to get the value of the property
+    }
+    set name(value:string){
+        this._name=value; //Setter is always void type and it is used to set the value of the property
+    }
+}
+let i1=new Info2("Alice", 30);
+i1.name; // This will call the getter method to retrieve the name
+i1.name="Bob"; // This will call the setter method to change the name   
+
+//=================================================================================//
+// static property and method
+
+class Info3{
+    static version="1.0.0"; //static property can be accessed without creating an instance of the class
+
+    static getVersion(){
+        return Math.random(); //static method can be accessed without creating an instance of the class
+    }
+}
+Info3.version; // This will access the static property
+Info3.getVersion(); // This will call the static method
+
+//=================================================================================//
