@@ -65,3 +65,21 @@ class Info {
 }
 
 //================================================================================//
+// public private protected 
+
+class Car{
+    constructor(private model:string,public price:number,public type:string){} //model is private so it can only be accessed inside the class//
+}
+
+class EvCar extends Car{
+    constructor(public battery:number,model:string,price:number,type:string){
+        super(model,price,type) //super is used to call the constructor of parent class//
+    }
+    getDetails(){
+        console.log(this.model) //this will give error because model is private in parent class//
+    }
+
+}
+let ev1=new EvCar(100,"Tesla",100000,"Electric")
+
+//=================================================================================//
